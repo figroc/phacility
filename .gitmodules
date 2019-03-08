@@ -1,0 +1,6 @@
+[submodule "phabritex/render2katex"]
+	path = phabritex/render2katex
+	url = https://github.com/ProfFan/render2katex.git
+[submodule "phabritex/phabritex"]
+	path = phabritex/phabritex
+	url = https://github.com/ProfFan/phabritex.git

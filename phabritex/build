@@ -1,0 +1,9 @@
+#!/bin/bash
+
+set -e
+
+cd $(dirname ${0})/render2katex
+npm install pkg
+pkg index.js
+mv -f index ../render2katex
+cd ..

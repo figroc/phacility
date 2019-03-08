@@ -1,0 +1,20 @@
+#!/bin/bash
+
+dir=${1?phabricator}
+
+set -e
+
+cd $(dirname ${0})
+\cp -r phabritex/src ${dir}/
+\cp -r phabritex/webroot ${dir}/
+
+css=${dir}/webroot/rsrc/css/core/remarkup.css
+sed -i ":a;\$\!{N;ba};s/ * @provides phabricator-remarkup-css/&\n * @requires katex-css/1" ${css}
+css=${dir}/webroot/rsrc/css/phui/phui-document.css
+sed -i ":a;\$\!{N;ba};s/ * @provides phui-document-view-css/&\n * @requires katex-css/1" ${css}
+
+../../bin/celerity map
+
+for x in ${dir}/src/extensions/*.php; do
+    sed -i "s@node /var/www/render2katex/index.js @$(realpath render2katex) @" ${x}
+done

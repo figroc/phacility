@@ -4,7 +4,6 @@ set -e
 
 cd $(dirname ${0})/render2katex
 npm install -g pkg
-echo "pkg? $(which pkg)"
 npm install
 pkg -t node10-linux-x64 index.js
 cd ..

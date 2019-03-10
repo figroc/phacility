@@ -8,9 +8,9 @@ cp -r $(dirname ${0})/phabritex/src ${dir}/
 cp -r $(dirname ${0})/phabritex/webroot ${dir}/
 
 css=${dir}/webroot/rsrc/css/core/remarkup.css
-sed -i ":a;\$\!{N;ba};s/ * @provides phabricator-remarkup-css/&\n * @requires katex-css/1" ${css}
+sed -i ":a;\$\!{N;ba};s/ * @provides phabricator-remarkup-css/&\\n * @requires katex-css/1" ${css}
 css=${dir}/webroot/rsrc/css/phui/phui-document.css
-sed -i ":a;\$\!{N;ba};s/ * @provides phui-document-view-css/&\n * @requires katex-css/1" ${css}
+sed -i ":a;\$\!{N;ba};s/ * @provides phui-document-view-css/&\\n * @requires katex-css/1" ${css}
 
 $(dirname ${0})/../../bin/celerity map
 

@@ -1,9 +1,0 @@
-#!/bin/bash
-
-dir=${1?libphutil}
-
-set -e
-
-map=${dir}/src/__phutil_library_map__.php
-sed -i ":a;\$\!{N;ba};s/.*PhutilAuthUserAbortedException.*/&\n    'PhutilAzureAuthAdapter' => 'auth/PhutilAzureAuthAdapter.php',/1" ${map}
-sed -i ":a;\$\!{N;ba};s/.*PhutilAuthUserAbortedException.*/&\n    'PhutilAzureAuthAdapter' => 'PhutilOAuthAuthAdapter',/3" ${map}

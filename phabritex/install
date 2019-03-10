@@ -4,8 +4,8 @@ dir=${1?phabricator}
 
 set -e
 
-\cp -r $(dirname ${0})/phabritex/src ${dir}/
-\cp -r $(dirname ${0})/phabritex/webroot ${dir}/
+cp -r $(dirname ${0})/phabritex/src ${dir}/
+cp -r $(dirname ${0})/phabritex/webroot ${dir}/
 
 css=${dir}/webroot/rsrc/css/core/remarkup.css
 sed -i ":a;\$\!{N;ba};s/ * @provides phabricator-remarkup-css/&\n * @requires katex-css/1" ${css}

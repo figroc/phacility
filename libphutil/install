@@ -4,7 +4,7 @@ dir=${1?libphutil}
 
 set -e
 
-\cp -r $(dirname ${0})/src ${dir}/
+cp -r $(dirname ${0})/src ${dir}/
 map=${dir}/src/__phutil_library_map__.php
-sed -i ":a;\$\!{N;ba};s/    'PhutilAuthUserAbortedException' => 'auth/exception/PhutilAuthUserAbortedException.php',/&\n    'PhutilAzureAuthAdapter' => 'auth/PhutilAzureAuthAdapter.php',/1" ${map}
-sed -i ":a;\$\!{N;ba};s/    'PhutilAuthUserAbortedException' => 'PhutilAuthException',/&\n    'PhutilAzureAuthAdapter' => 'PhutilOAuthAuthAdapter',/3" ${map}
+sed -i ":a;\$\!{N;ba};s/    'PhutilAuthUserAbortedException' => 'auth/exception/PhutilAuthUserAbortedException.php',/&\\n    'PhutilAzureAuthAdapter' => 'auth/PhutilAzureAuthAdapter.php',/1" ${map}
+sed -i ":a;\$\!{N;ba};s/    'PhutilAuthUserAbortedException' => 'PhutilAuthException',/&\\n    'PhutilAzureAuthAdapter' => 'PhutilOAuthAuthAdapter',/1" ${map}

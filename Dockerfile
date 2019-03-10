@@ -13,7 +13,7 @@ RUN phacility/phabritex/build
 FROM nasqueron/phabricator:latest
 LABEL maintainer="Peng Chen<chenp@cloudbrain.ai>"
 
-COPY --from=builder phacility/ phacility/
-RUN phacility/libphutil/map ../libphutil && \
-    phacility/phabricator/map . && \
+COPY --from=builder /opt/phabricator/phacility/ phacility/
+RUN phacility/libphutil/install ../libphutil && \
+    phacility/phabricator/install . && \
     phacility/phabritex/install .
